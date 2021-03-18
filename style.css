@@ -1,3 +1,8 @@
+* {
+    color: #286983;
+    font-family: 'Blinker', sans-serif;
+}
+
 .container {
     display: grid;
     grid-template-rows: 5rem 1fr 5rem;
@@ -13,24 +18,48 @@
 .header {
     grid-area: h;
     background-color: #faf4ed;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 10px
 }
 
 .slideout {
     grid-area: s;
-    background-color: #9893a5;
+    background-color: #fffaf3
 }
 
 .main {
     grid-area: m;
-    background-color: #3e8fb0;
+    background-color: #f2e9de
 }
 
 footer {
     grid-area: f;
     background-color: #faf4ed;
+    text-align: center;
 }
 
-.navbar {
-    display: flex;
-    flex-direction: row;
+.slidebutton {
+    padding: 40px;
+    font-size: 2rem;
+    background-color: #fffaf3;
+    border: 0;
+}
+
+.newnotebutton {
+    padding: 40px;
+    font-size: 3rem;
+    background-color: #f2e9de;
+    border: 0;
+}
+
+button:hover {
+    background-color: #9ccfd8
+}
+
+
+.headerelement {
+    padding: 5px;
+    font-size: 1.5rem;
 }
