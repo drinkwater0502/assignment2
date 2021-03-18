@@ -1,6 +1,7 @@
 * {
     color: #286983;
     font-family: 'Blinker', sans-serif;
+    margin: 0;
 }
 
 .container {
@@ -67,5 +68,6 @@ button:hover {
 .newnote {
     display: flex;
     flex-direction: row;
-    padding: 20px
+    padding: 20px;
+    font-size: 3rem;
 }
