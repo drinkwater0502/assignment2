@@ -1,0 +1,36 @@
+.container {
+    display: grid;
+    grid-template-rows: 5rem 1fr 5rem;
+    grid-template-columns: 250px 1fr;
+    grid-template-areas: 
+        's h h'
+        's m m'
+        's f f';
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    grid-area: h;
+    background-color: #faf4ed;
+}
+
+.slideout {
+    grid-area: s;
+    background-color: #9893a5;
+}
+
+.main {
+    grid-area: m;
+    background-color: #3e8fb0;
+}
+
+footer {
+    grid-area: f;
+    background-color: #faf4ed;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+}
