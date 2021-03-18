@@ -31,7 +31,7 @@
 
 .main {
     grid-area: m;
-    background-color: #f2e9de
+    background-color: #f2e9de;
 }
 
 footer {
@@ -48,8 +48,8 @@ footer {
 }
 
 .newnotebutton {
-    padding: 40px;
-    font-size: 3rem;
+    padding: 10px;
+    font-size: 2rem;
     background-color: #f2e9de;
     border: 0;
 }
@@ -62,4 +62,10 @@ button:hover {
 .headerelement {
     padding: 5px;
     font-size: 1.5rem;
+}
+
+.newnote {
+    display: flex;
+    flex-direction: row;
+    padding: 20px
 }
