@@ -27,7 +27,14 @@
 
 .slideout {
     grid-area: s;
-    background-color: #fffaf3
+    background-color: #fffaf3;
+}
+
+.slideout2 {
+    grid-area: s;
+    background-color: #fffaf3;
+    display: flex;
+    flex-direction: column;
 }
 
 .main {
@@ -39,6 +46,7 @@ footer {
     grid-area: f;
     background-color: #faf4ed;
     text-align: center;
+    padding: 20px
 }
 
 .slidebutton {
@@ -65,9 +73,44 @@ button:hover {
     font-size: 1.5rem;
 }
 
-.newnote {
+.newnote1 {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     padding: 20px;
     font-size: 3rem;
+}
+
+.widthadjust {
+    width: 10rem
+}
+
+.newnote2 {
+    display: grid;
+    grid-template-rows: 15rem 1fr;
+    grid-template-columns: 20rem 1fr;
+    grid-template-areas: 
+        'p t'
+        'v d';
+    font-size: 3rem;
+}
+
+.plus {
+    grid-area: p;
+}
+
+#textbox {
+    grid-area: t;
+}
+
+.savebutton {
+    grid-area: v;
+}
+
+.deletebutton {
+    grid-area: d;
+}
+
+ul {
+    list-style-type: none;
 }
