@@ -4,16 +4,52 @@
     margin: 0;
 }
 
-.container {
-    display: grid;
-    grid-template-rows: 5rem 1fr 5rem;
-    grid-template-columns: 250px 1fr;
-    grid-template-areas: 
-        's h h'
-        's m m'
-        's f f';
-    width: 100vw;
-    height: 100vh;
+@media (max-width: 2000px) {
+    .container {
+        display: grid;
+        grid-template-rows: 5rem 1fr 5rem;
+        grid-template-columns: 250px 1fr;
+        grid-template-areas: 
+            's h h'
+            's m m'
+            's f f';
+        width: 100vw;
+        height: 100vh;
+    }
+    .newnote2 {
+        display: grid;
+        grid-template-rows: 15rem 1fr;
+        grid-template-columns: 2rem 1fr;
+        grid-template-areas: 
+            'p t'
+            '. b';
+        font-size: 3rem;
+        padding: 20px
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        display: grid;
+        grid-template-rows: 3rem 1fr 2rem;
+        grid-template-columns: 7rem 1fr;
+        grid-template-areas: 
+            's h h'
+            's m m'
+            's f f';
+        width: 100vw;
+        height: 100vh;
+    }
+    .newnote2 {
+        display: grid;
+        grid-template-rows: 15rem 1fr;
+        grid-template-columns: 2rem 1fr;
+        grid-template-areas: 
+            'p t'
+            '. b';
+        font-size: 3rem;
+        padding: 20px
+    }
 }
 
 .header {
@@ -86,17 +122,6 @@ button:hover {
 
 .widthadjust {
     width: 10rem
-}
-
-.newnote2 {
-    display: grid;
-    grid-template-rows: 15rem 1fr;
-    grid-template-columns: 2rem 1fr;
-    grid-template-areas: 
-        'p t'
-        '. b';
-    font-size: 3rem;
-    padding: 20px
 }
 
 .plus {
