@@ -42,13 +42,12 @@
     }
     .newnote2 {
         display: grid;
-        grid-template-rows: 15rem 1fr;
-        grid-template-columns: 2rem 1fr;
+        grid-template-rows: 10rem 1fr;
+        grid-template-columns: 20px 1fr;
         grid-template-areas: 
             'p t'
             '. b';
         font-size: 3rem;
-        padding: 20px
     }
 }
 
@@ -126,6 +125,7 @@ button:hover {
 
 .plus {
     grid-area: p;
+    font-size: 2rem;
 }
 
 #textbox {
