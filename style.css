@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-@media (max-width: 2000px) {
+@media screen and (max-width: 2000px) {
     .container {
         display: grid;
         grid-template-rows: 5rem 1fr 5rem;
@@ -28,7 +28,7 @@
     }
 }
 
-@media (max-width: 400px) {
+@media screen and (max-width: 400px) {
     .container {
         display: grid;
         grid-template-rows: 3rem 1fr 2rem;
