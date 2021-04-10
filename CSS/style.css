@@ -94,6 +94,7 @@ footer {
     font-size: 2rem;
     background-color: #fffaf3;
     border: 0;
+    height: 20px;
 }
 
 button {
@@ -103,7 +104,7 @@ button {
 .newnotebutton {
     padding: 10px;
     font-size: 2rem;
-    background-color: #f2e9de;
+    background-color: #e0def4;
 }
 
 .newnotebutton:hover {

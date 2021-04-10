@@ -22,6 +22,7 @@ const lightmain = 'rgb(' + 242 + ',' + 233 + ',' + 222 + ')';
 const lightfontcolor = 'rgb(' + 40 + ',' + 105 + ',' + 131 + ')';
 
 const hoverbutton = 'rgb(' + 62 + ',' + 143 + ',' + 176 + ')';
+const darkplus = 'rgb(' + 224 + ',' + 222 + ',' + 244 + ')';
 
 const headelements = document.querySelectorAll('.headerelement a');
 
@@ -36,6 +37,8 @@ modebtn.onclick = function() {
         document.querySelector('.main').style.backgroundColor = darkmain;
         document.querySelector('footer').style.backgroundColor = darkheaderfooter;
         document.querySelector('footer').querySelector('p').style.color = darkfontcolor;
+        document.querySelector('.plussign').style.color = darkplus;
+        document.querySelector('.slidebutton').style.backgroundColor = darkslideout;
         modebtn.textContent = 'Light Mode';
         modebtn.style.color = lightfontcolor;
         modebtn.style.backgroundColor = lightheaderfooter;
@@ -49,13 +52,14 @@ modebtn.onclick = function() {
         document.querySelector('.main').style.backgroundColor = lightmain;
         document.querySelector('footer').style.backgroundColor = lightheaderfooter;
         document.querySelector('footer').querySelector('p').style.color = lightfontcolor;
+        document.querySelector('.plussign').style.color = lightfontcolor;
+        document.querySelector('.slidebutton').style.backgroundColor = lightslideout;
         modebtn.textContent = 'Dark Mode';
         modebtn.style.color = darkfontcolor;
         modebtn.style.backgroundColor = darkheaderfooter;
         counter += 1;
     }
 }
-
 
 // - let notesArray = [] (define array globally so it can be accessed outside of the function)
 // 2. function for new note: const newnote = function() {
@@ -67,6 +71,11 @@ modebtn.onclick = function() {
 // - if deletebttn is clicked:
 // -    delete both textarea boxes and both buttons
 // - }
+
+const newnotebtn = document.querySelector('.newnotebutton');
+newnotebtn.onclick = function() {
+    console.log('hi')
+}
 
 // 3. function to update list of notes: const sidelist = function(notesArray) {
 // - for (i = 0, i < notesArray.length, i++) {
