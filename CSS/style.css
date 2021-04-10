@@ -2,6 +2,7 @@
     color: #286983;
     font-family: 'Blinker', sans-serif;
     margin: 0;
+    padding: 0;
 }
 
 @media screen and (max-width: 2000px) {
@@ -60,6 +61,11 @@
     padding: 10px
 }
 
+.headerelement a{
+    padding: 5px;
+    font-size: 1.5rem;
+}
+
 .slideout {
     grid-area: s;
     background-color: #fffaf3;
@@ -81,7 +87,6 @@ footer {
     grid-area: f;
     background-color: #faf4ed;
     text-align: center;
-    padding: 20px
 }
 
 .slidebutton {
@@ -101,14 +106,16 @@ button {
     background-color: #f2e9de;
 }
 
-button:hover {
+.newnotebutton:hover {
     background-color: #9ccfd8
 }
 
-
-.headerelement {
-    padding: 5px;
-    font-size: 1.5rem;
+.darkmodebutton {
+    background-color: #232136;
+    color: #f6c177;
+    height: 50px;
+    width: 80px;
+    float: right
 }
 
 .newnote1 {

@@ -9,6 +9,52 @@
 // -        background-color = white
 // -        font-color = black
 // - }
+const modebtn = document.querySelector('.darkmodebutton');
+
+const darkheaderfooter = 'rgb(' + 42 + ',' + 39 + ',' + 63 + ')';
+const darkslideout = 'rgb(' + 57 + ',' + 53 + ',' + 82 + ')';
+const darkmain = 'rgb(' + 89 + ',' + 84 + ',' + 109 + ')';
+const darkfontcolor = 'rgb(' + 246 + ',' + 193 + ',' + 119 + ')';
+
+const lightheaderfooter = 'rgb(' + 250 + ',' + 244 + ',' + 237 + ')';
+const lightslideout = 'rgb(' + 255 + ',' + 250 + ',' + 243 + ')';
+const lightmain = 'rgb(' + 242 + ',' + 233 + ',' + 222 + ')';
+const lightfontcolor = 'rgb(' + 40 + ',' + 105 + ',' + 131 + ')';
+
+const hoverbutton = 'rgb(' + 62 + ',' + 143 + ',' + 176 + ')';
+
+const headelements = document.querySelectorAll('.headerelement a');
+
+let counter = 0;
+modebtn.onclick = function() {
+    if (counter % 2 == 0){
+        document.querySelector('.header').style.backgroundColor = darkheaderfooter;
+        headelements.forEach(function(headeritem) {
+            headeritem.style.color = darkfontcolor;
+        });
+        document.querySelector('.slideout').style.backgroundColor = darkslideout;
+        document.querySelector('.main').style.backgroundColor = darkmain;
+        document.querySelector('footer').style.backgroundColor = darkheaderfooter;
+        document.querySelector('footer').querySelector('p').style.color = darkfontcolor;
+        modebtn.textContent = 'Light Mode';
+        modebtn.style.color = lightfontcolor;
+        modebtn.style.backgroundColor = lightheaderfooter;
+        counter += 1;
+    }else{
+        document.querySelector('.header').style.backgroundColor = lightheaderfooter;
+        headelements.forEach(function(headeritem) {
+            headeritem.style.color = lightfontcolor;
+        });
+        document.querySelector('.slideout').style.backgroundColor = lightslideout;
+        document.querySelector('.main').style.backgroundColor = lightmain;
+        document.querySelector('footer').style.backgroundColor = lightheaderfooter;
+        document.querySelector('footer').querySelector('p').style.color = lightfontcolor;
+        modebtn.textContent = 'Dark Mode';
+        modebtn.style.color = darkfontcolor;
+        modebtn.style.backgroundColor = darkheaderfooter;
+        counter += 1;
+    }
+}
 
 
 // - let notesArray = [] (define array globally so it can be accessed outside of the function)
