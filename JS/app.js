@@ -25,6 +25,7 @@ const hoverbutton = 'rgb(' + 62 + ',' + 143 + ',' + 176 + ')';
 const darkplus = 'rgb(' + 224 + ',' + 222 + ',' + 244 + ')';
 
 const headelements = document.querySelectorAll('.headerelement a');
+let listelements = document.querySelectorAll('.listitem');
 
 let counter = 0;
 modebtn.onclick = function() {
@@ -33,6 +34,10 @@ modebtn.onclick = function() {
         headelements.forEach(function(headeritem) {
             headeritem.style.color = darkfontcolor;
         });
+        document.querySelectorAll('.listitem').forEach(function(list_item){
+            list_item.style.color = darkfontcolor
+        });
+
         document.querySelector('.slideout2').style.backgroundColor = darkslideout;
         document.querySelector('.main').style.backgroundColor = darkmain;
         document.querySelector('footer').style.backgroundColor = darkheaderfooter;
@@ -48,6 +53,9 @@ modebtn.onclick = function() {
         document.querySelector('.header').style.backgroundColor = lightheaderfooter;
         headelements.forEach(function(headeritem) {
             headeritem.style.color = lightfontcolor;
+        });
+        document.querySelectorAll('.listitem').forEach(function(list_item){
+            list_item.style.color = lightfontcolor
         });
         document.querySelector('.slideout2').style.backgroundColor = lightslideout;
         document.querySelector('.main').style.backgroundColor = lightmain;
@@ -81,6 +89,8 @@ const unordlist = document.createElement('UL');
 unordlist.setAttribute("class", "myList");
 sidemenu.appendChild(unordlist);
 
+let listcounter = 0;
+let hiddencounter = 0;
 
 let notesArray = [];
 newnotebtn.onclick = function() {
@@ -109,16 +119,55 @@ newnotebtn.onclick = function() {
     savedeldiv.appendChild(delbtn);
 
 
+
     savebtn.onclick = function() {
+
         notesArray.push(usertextarea.value);
         let mostrecentnote = notesArray[notesArray.length -1];
+        let splittedarray = mostrecentnote.split("\n");
+        let splittedarraycontent = splittedarray.slice((splittedarray.length -1)*-1);
+        let contentstring = splittedarraycontent.join("\n");
+        
+        let contenttextnode = document.createTextNode(contentstring);
+        let pforcontent = document.createElement('p');
+        pforcontent.setAttribute("id", 'p'+listcounter);
+        pforcontent.style.display = "none";
+        listcounter += 1;
+        pforcontent.appendChild(contenttextnode);
+        document.body.querySelector('.main').appendChild(pforcontent);
+        
+        
         let usertitle = mostrecentnote.split("\n", 1)[0];
-        let usercontent = mostrecentnote.split("\n").slice((mostrecentnote.len - 1)*-1);
         let myli = document.createElement('li');
         myli.setAttribute("class", "listitem");
         myli.innerHTML = usertitle;
         unordlist.appendChild(myli);
         textboxdiv.remove();
+
+        for (i = 0; i < document.querySelectorAll('.listitem').length; i++){
+            (document.querySelectorAll('.listitem'))[i].setAttribute("id", 100+i);
+            
+        }
+        for (i = 0; i < document.querySelectorAll('.listitem').length; i++){
+            document.querySelectorAll('.listitem')[i].onclick = function() {
+                let idvalue = '#p' + (i-1);
+                document.querySelector(idvalue).style.display = "block";
+                if (hiddencounter % 2 == 0){
+                    let closebtn = document.createElement('BUTTON');
+                    hiddencounter += 1;
+                    closebtn.innerHTML = "close";
+                    closebtn.setAttribute("id", "clsebtn");
+                    document.querySelector(idvalue).append(closebtn);
+                    closebtn.onclick = function() {
+                        document.querySelector(idvalue).style.display = "none";
+                        closebtn.style.display = "none";
+                        hiddencounter += 1;
+                        closebtn.remove();
+                }
+                }
+                
+            }
+        }
     }
 
     delbtn.onclick = function() {
@@ -126,10 +175,9 @@ newnotebtn.onclick = function() {
     }
 }
 
-// let my_li_items = document.getElementsByClassName("listitem");
-// my_li_items.forEach((e) => {
-//     e.style.color = 'red';
-// });
+// for (i = 0; i < document.querySelectorAll('.listitem').length; i++){
+//     (document.querySelectorAll('.listitem'))[i].style.color = "green";
+// }
 
 // 3. function to update list of notes: const sidelist = function(notesArray) {
 // - for (i = 0, i < notesArray.length, i++) {
