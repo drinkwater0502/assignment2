@@ -5,6 +5,28 @@
     padding: 0;
 }
 
+.darkmodebutton {
+    background-color: #232136;
+    color: #f6c177;
+    height: 50px;
+    width: 80px;
+    justify-content: right;
+}
+
+footer {
+    grid-area: f;
+    background-color: #faf4ed;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: right;
+}
+
+.createdby {
+    margin: 15px
+}
+
 @media screen and (max-width: 2000px) {
     .container {
         display: grid;
@@ -50,6 +72,15 @@
             '. b';
         font-size: 3rem;
     }
+    .darkmodebutton {
+        height: 30px;
+        width: 40px;
+        justify-content: right;
+    }
+    .createdby {
+        text-align: left;
+    }
+    
 }
 
 .header {
@@ -85,11 +116,7 @@
     padding: 20px
 }
 
-footer {
-    grid-area: f;
-    background-color: #faf4ed;
-    text-align: center;
-}
+
 
 .slidebutton {
     padding: 40px;
@@ -113,13 +140,7 @@ button {
     background-color: #9ccfd8
 }
 
-.darkmodebutton {
-    background-color: #232136;
-    color: #f6c177;
-    height: 50px;
-    width: 80px;
-    float: right
-}
+
 
 .newnote1 {
     display: flex;
