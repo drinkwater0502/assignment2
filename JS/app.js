@@ -1,14 +1,3 @@
-// 4 functions that I may need for this assignment
-
-// 1. function for dark mode: const changemode = function() {
-// - something like let modechangebttn = document.querySelector("#modebutton")
-// -    if modechangebttn is clicked and background-color is white:
-// -        background-color = black
-// -        font-color = white
-// -    elif modechangebttn is clicked and background-color is black:
-// -        background-color = white
-// -        font-color = black
-// - }
 const modebtn = document.querySelector('.darkmodebutton');
 
 const darkheaderfooter = 'rgb(' + 42 + ',' + 39 + ',' + 63 + ')';
@@ -41,10 +30,11 @@ modebtn.onclick = function() {
         document.querySelector('.slideout2').style.backgroundColor = darkslideout;
         document.querySelector('.main').style.backgroundColor = darkmain;
         document.querySelector('footer').style.backgroundColor = darkheaderfooter;
-        document.querySelector('footer').querySelector('p').style.color = darkfontcolor;
+        document.querySelector('footer').querySelector('div').style.color = darkfontcolor;
         document.querySelector('.plussign').style.color = darkplus;
         document.querySelector('.slidebutton').style.backgroundColor = darkslideout;
         document.querySelector('.slidebutton').style.color = darkplus;
+        document.querySelector('nav').style.color = darkplus;
         modebtn.textContent = 'Light Mode';
         modebtn.style.color = lightfontcolor;
         modebtn.style.backgroundColor = lightheaderfooter;
@@ -60,7 +50,7 @@ modebtn.onclick = function() {
         document.querySelector('.slideout2').style.backgroundColor = lightslideout;
         document.querySelector('.main').style.backgroundColor = lightmain;
         document.querySelector('footer').style.backgroundColor = lightheaderfooter;
-        document.querySelector('footer').querySelector('p').style.color = lightfontcolor;
+        document.querySelector('footer').querySelector('div').style.color = lightfontcolor;
         document.querySelector('.plussign').style.color = lightfontcolor;
         document.querySelector('.slidebutton').style.backgroundColor = lightslideout;
         document.querySelector('.slidebutton').style.color = lightfontcolor;
@@ -70,17 +60,6 @@ modebtn.onclick = function() {
         counter += 1;
     }
 }
-
-// - let notesArray = [] (define array globally so it can be accessed outside of the function)
-// 2. function for new note: const newnote = function() {
-// - create 2 new textarea boxes, one for note title and one for note body
-// - create save and delete buttons (savebttn and deletebttn)
-// - if savebttn is clicked:
-// -    notesArray.push(title, body)
-// -    delete both textarea boxes and both buttons
-// - if deletebttn is clicked:
-// -    delete both textarea boxes and both buttons
-// - }
 
 const newnotebtn = document.querySelector('.newnotebutton');
 
@@ -163,7 +142,7 @@ newnotebtn.onclick = function() {
                         closebtn.style.display = "none";
                         hiddencounter += 1;
                         closebtn.remove();
-                }
+                    }
                 }
                 
             }
@@ -175,9 +154,28 @@ newnotebtn.onclick = function() {
     }
 }
 
-// for (i = 0; i < document.querySelectorAll('.listitem').length; i++){
-//     (document.querySelectorAll('.listitem'))[i].style.color = "green";
-// }
+// 4 functions that I may need for this assignment
+
+// 1. function for dark mode: const changemode = function() {
+// - something like let modechangebttn = document.querySelector("#modebutton")
+// -    if modechangebttn is clicked and background-color is white:
+// -        background-color = black
+// -        font-color = white
+// -    elif modechangebttn is clicked and background-color is black:
+// -        background-color = white
+// -        font-color = black
+// - }
+
+// - let notesArray = [] (define array globally so it can be accessed outside of the function)
+// 2. function for new note: const newnote = function() {
+// - create 2 new textarea boxes, one for note title and one for note body
+// - create save and delete buttons (savebttn and deletebttn)
+// - if savebttn is clicked:
+// -    notesArray.push(title, body)
+// -    delete both textarea boxes and both buttons
+// - if deletebttn is clicked:
+// -    delete both textarea boxes and both buttons
+// - }
 
 // 3. function to update list of notes: const sidelist = function(notesArray) {
 // - for (i = 0, i < notesArray.length, i++) {
@@ -187,20 +185,6 @@ newnotebtn.onclick = function() {
 // -        *also im not sure if things like lists will update dynamically if the array is updated*
 // -    }
 // - }
-
-// const sidemenu = document.querySelector('.slideout2');
-// const unordlist = document.createElement('UL');
-// sidemenu.appendChild(unordlist);
-// for (i = 0; i < notesArray.length; i++) {
-//     let noteTitle = document.createElement('LI');
-//     noteTitle.innerHTML = (notesArray[i].split("\n", 1))[0];
-//     unordlist.appendChild(noteTitle);
-// }
-
-// for (i = 0; i < notesArray.length; i++) {
-//     let noteTitle = (notesArray[i].split("\n", 1))[0];
-//     console.log(noteTitle);
-// }
 
 // 4. function to display old notes: const viewnote = function() {
 // - if note link/button is clicked:
