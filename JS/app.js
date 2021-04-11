@@ -39,6 +39,7 @@ modebtn.onclick = function() {
         document.querySelector('footer').querySelector('p').style.color = darkfontcolor;
         document.querySelector('.plussign').style.color = darkplus;
         document.querySelector('.slidebutton').style.backgroundColor = darkslideout;
+        document.querySelector('.slidebutton').style.color = darkplus;
         modebtn.textContent = 'Light Mode';
         modebtn.style.color = lightfontcolor;
         modebtn.style.backgroundColor = lightheaderfooter;
@@ -54,6 +55,7 @@ modebtn.onclick = function() {
         document.querySelector('footer').querySelector('p').style.color = lightfontcolor;
         document.querySelector('.plussign').style.color = lightfontcolor;
         document.querySelector('.slidebutton').style.backgroundColor = lightslideout;
+        document.querySelector('.slidebutton').style.color = lightfontcolor;
         modebtn.textContent = 'Dark Mode';
         modebtn.style.color = darkfontcolor;
         modebtn.style.backgroundColor = darkheaderfooter;
@@ -73,8 +75,42 @@ modebtn.onclick = function() {
 // - }
 
 const newnotebtn = document.querySelector('.newnotebutton');
+let notesArray = [];
+let titlesArray = [];
 newnotebtn.onclick = function() {
-    console.log('hi')
+    const textboxdiv = document.createElement('DIV');
+    textboxdiv.setAttribute("class", "newnote2");
+    document.body.querySelector('.main').appendChild(textboxdiv);
+
+    const usertextarea = document.createElement('TEXTAREA');
+    usertextarea.setAttribute("class", "textbox");
+    usertextarea.innerHTML = "your note here (first line will be the title)";
+    usertextarea.style.position = "intitial";
+    textboxdiv.appendChild(usertextarea);
+    
+    const savedeldiv = document.createElement('DIV');
+    savedeldiv.setAttribute("class", "textbuttons");
+    textboxdiv.appendChild(savedeldiv);
+
+    const savebtn = document.createElement('BUTTON');
+    savebtn.setAttribute("class", "savebutton");
+    savebtn.innerHTML = "Save";
+    savedeldiv.appendChild(savebtn);
+    
+    const delbtn = document.createElement('BUTTON');
+    delbtn.setAttribute("class", "deletebutton");
+    delbtn.innerHTML = "Cancel";
+    savedeldiv.appendChild(delbtn);
+
+    savebtn.onclick = function() {
+        notesArray.push(usertextarea.value)
+        textboxdiv.remove();
+    }
+
+    delbtn.onclick = function() {
+        textboxdiv.remove();
+    }
+
 }
 
 // 3. function to update list of notes: const sidelist = function(notesArray) {
