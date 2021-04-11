@@ -76,6 +76,7 @@
     background-color: #fffaf3;
     display: flex;
     flex-direction: column;
+    padding: 20px
 }
 
 .main {
@@ -168,3 +169,4 @@ button {
 ul {
     list-style-type: none;
 }
+

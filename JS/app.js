@@ -33,7 +33,7 @@ modebtn.onclick = function() {
         headelements.forEach(function(headeritem) {
             headeritem.style.color = darkfontcolor;
         });
-        document.querySelector('.slideout').style.backgroundColor = darkslideout;
+        document.querySelector('.slideout2').style.backgroundColor = darkslideout;
         document.querySelector('.main').style.backgroundColor = darkmain;
         document.querySelector('footer').style.backgroundColor = darkheaderfooter;
         document.querySelector('footer').querySelector('p').style.color = darkfontcolor;
@@ -49,7 +49,7 @@ modebtn.onclick = function() {
         headelements.forEach(function(headeritem) {
             headeritem.style.color = lightfontcolor;
         });
-        document.querySelector('.slideout').style.backgroundColor = lightslideout;
+        document.querySelector('.slideout2').style.backgroundColor = lightslideout;
         document.querySelector('.main').style.backgroundColor = lightmain;
         document.querySelector('footer').style.backgroundColor = lightheaderfooter;
         document.querySelector('footer').querySelector('p').style.color = lightfontcolor;
@@ -75,8 +75,14 @@ modebtn.onclick = function() {
 // - }
 
 const newnotebtn = document.querySelector('.newnotebutton');
+
+const sidemenu = document.querySelector('.slideout2');
+const unordlist = document.createElement('UL');
+unordlist.setAttribute("class", "myList");
+sidemenu.appendChild(unordlist);
+
+
 let notesArray = [];
-let titlesArray = [];
 newnotebtn.onclick = function() {
     const textboxdiv = document.createElement('DIV');
     textboxdiv.setAttribute("class", "newnote2");
@@ -84,7 +90,7 @@ newnotebtn.onclick = function() {
 
     const usertextarea = document.createElement('TEXTAREA');
     usertextarea.setAttribute("class", "textbox");
-    usertextarea.innerHTML = "your note here (first line will be the title)";
+    usertextarea.innerHTML = "note title here\nnote content here";
     usertextarea.style.position = "intitial";
     textboxdiv.appendChild(usertextarea);
     
@@ -102,16 +108,28 @@ newnotebtn.onclick = function() {
     delbtn.innerHTML = "Cancel";
     savedeldiv.appendChild(delbtn);
 
+
     savebtn.onclick = function() {
-        notesArray.push(usertextarea.value)
+        notesArray.push(usertextarea.value);
+        let mostrecentnote = notesArray[notesArray.length -1];
+        let usertitle = mostrecentnote.split("\n", 1)[0];
+        let usercontent = mostrecentnote.split("\n").slice((mostrecentnote.len - 1)*-1);
+        let myli = document.createElement('li');
+        myli.setAttribute("class", "listitem");
+        myli.innerHTML = usertitle;
+        unordlist.appendChild(myli);
         textboxdiv.remove();
     }
 
     delbtn.onclick = function() {
         textboxdiv.remove();
     }
-
 }
+
+// let my_li_items = document.getElementsByClassName("listitem");
+// my_li_items.forEach((e) => {
+//     e.style.color = 'red';
+// });
 
 // 3. function to update list of notes: const sidelist = function(notesArray) {
 // - for (i = 0, i < notesArray.length, i++) {
@@ -121,6 +139,20 @@ newnotebtn.onclick = function() {
 // -        *also im not sure if things like lists will update dynamically if the array is updated*
 // -    }
 // - }
+
+// const sidemenu = document.querySelector('.slideout2');
+// const unordlist = document.createElement('UL');
+// sidemenu.appendChild(unordlist);
+// for (i = 0; i < notesArray.length; i++) {
+//     let noteTitle = document.createElement('LI');
+//     noteTitle.innerHTML = (notesArray[i].split("\n", 1))[0];
+//     unordlist.appendChild(noteTitle);
+// }
+
+// for (i = 0; i < notesArray.length; i++) {
+//     let noteTitle = (notesArray[i].split("\n", 1))[0];
+//     console.log(noteTitle);
+// }
 
 // 4. function to display old notes: const viewnote = function() {
 // - if note link/button is clicked:
